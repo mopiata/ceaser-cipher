@@ -37,4 +37,11 @@ public class CeaserEncryptTest {
         String stringResult="J BN B HJSM";
         assertEquals(stringResult,testString.textEncrypt("I AM A GIRL",1));
     }
+
+    @Test
+    public void textEncrypt_dontEncryptNonAlphabets_String() {
+        CeaserEncrypt testString = new CeaserEncrypt();
+        String stringResult="?";
+        assertEquals(stringResult,testString.textEncrypt("?",1));
+    }
 }
