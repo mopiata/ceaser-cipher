@@ -12,29 +12,12 @@ public class CeaserEncrypt {
             return text;
         }else if(text.matches(" ")){
             return text;
-        }else
-            if(text.matches("[a-zA-Z]")){
-            //char[] charText=text.toCharArray();
-            //Character[] charObjectText= ArrayUtils.toObject(charText);
-//            Character[] charObjectText= text.chars().mapToObj(c -> (char)c).toArray(Character[]::new);
-//            ArrayList<Character> charResult=new ArrayList<Character>();
-//
-//
-//            for(int index=0;index<charObjectText.length; index++){
-//                if(charObjectText[index].equals("[a-zA-Z]")){
-//                    Character cipheredText=(char)(charObjectText[index]+shiftKey);
-//                    charResult.add(cipheredText);
-//                }
-//            }
-//            return new String(charResult);
-
-
+        }else if(text.matches("[a-zA-Z]+")){
             String strIncremented=new String();
-            for(int i=0;i<text.length();i++){
-                strIncremented+=(char)(text.charAt(i)+shiftKey);
-            }
+                for(int i=0;i<text.length();i++){
+                    strIncremented+=(char)(text.charAt(i)+shiftKey);
+                }
             return (strIncremented);
-
         } else
         return null;
     }

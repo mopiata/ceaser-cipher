@@ -18,9 +18,16 @@ public class CeaserEncryptTest {
     }
 
     @Test
-    public void textEncrypt_singleLetterShiftsByKey() {
+    public void textEncrypt_singleLetterEncryption() {
         CeaserEncrypt testString = new CeaserEncrypt();
         String stringLetter="D";
         assertEquals(stringLetter,testString.textEncrypt("A",3));
+    }
+
+    @Test
+    public void textEncrypt_singleWordEncryption() {
+        CeaserEncrypt testString = new CeaserEncrypt();
+        String stringResult="DBU";
+        assertEquals(stringResult,testString.textEncrypt("CAT",1));
     }
 }
