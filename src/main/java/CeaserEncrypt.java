@@ -7,18 +7,32 @@ import java.util.Arrays;
 import java.lang.Character;
 
 public class CeaserEncrypt {
-    public String textEncrypt(String text, int shiftKey){
+    public String textEncrypt(String text, int shiftKey) {
 
-        String cipherText="";
+        String cipherText = "";
 
-        for(int i=0;i<text.length();i++){
-            String stringIndex=String.valueOf(text.charAt(i));
+        for (int i = 0; i < text.length(); i++) {
+            String stringIndex = String.valueOf(text.charAt(i));
 
-            if(stringIndex.matches("[^a-zA-Z]+")){
-                cipherText+=text.charAt(i);
-            } else if(stringIndex.matches("[a-zA-Z]+")){
-                char ciphered_letter = (char) (text.charAt(i) + shiftKey);
-                cipherText+=ciphered_letter;
+            if (stringIndex.matches("[a-zA-Z]+")) {
+                Character ciphered_letter = (char) (text.charAt(i) + shiftKey);
+
+                if (stringIndex.matches("[a-z]+")) {
+                    if (ciphered_letter > 'z') {
+                        cipherText += (char) (text.charAt(i) - (26 - shiftKey));
+                    } else {
+                        cipherText += ciphered_letter;
+                    }
+                } else if (stringIndex.matches("[A-Z]+")) {
+                    if (ciphered_letter > 'Z') {
+                        cipherText += (char) (text.charAt(i) - (26 - shiftKey));
+                    } else {
+                        cipherText += ciphered_letter;
+                    }
+                }
+            }
+            else {
+                cipherText += text.charAt(i);
             }
         }
         return cipherText;
