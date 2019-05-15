@@ -1,9 +1,3 @@
-import com.sun.tools.javac.util.ArrayUtils;
-
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Arrays;
 import java.lang.Character;
 
 public class CeaserEncrypt {
