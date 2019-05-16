@@ -22,18 +22,18 @@ public class App {
                 );
 
                 String navigationChoice = bufferedReader.readLine();
+                int shiftKey;
 
                 if(navigationChoice.equals("1")){
                     System.out.println("Enter a text to encrypt");
                     String plainText = bufferedReader.readLine();
 
-                    System.out.println("Enter a key number between 1 and 25 to apply on the text.");
-                    int shiftKey = Integer.parseInt(bufferedReader.readLine());
-
-                        if(shiftKey<0 || shiftKey>25 ){
-                            System.out.println("Your shiftkey must be a number between 1-25");
-                            break;
+                        do{
+                            System.out.println("Enter a valid key between 1 and 25 for encryption.");
+                            shiftKey = Integer.parseInt(bufferedReader.readLine());
                         }
+                        while(shiftKey<0 || shiftKey>25 );
+
 
                     CeaserEncrypt ceaserEncrypt = new CeaserEncrypt(plainText, shiftKey);
                     String cipherText = ceaserEncrypt.textEncrypt(ceaserEncrypt.getPlainText(), ceaserEncrypt.getShiftKey());
@@ -54,7 +54,7 @@ public class App {
                     break;
                 }
             } catch (IOException e) {
-                System.out.println(e.getCause());
+                e.printStackTrace();
             }
         }
     }
