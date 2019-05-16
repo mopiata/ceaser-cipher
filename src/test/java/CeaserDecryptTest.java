@@ -16,9 +16,23 @@ public class CeaserDecryptTest {
     }
 
     @Test
-    public void newCeaserDecrypt_getsShiftKeyCorrectly_String() {
+    public void newCeaserDecrypt_getsShiftKeyCorrectly_Int() {
         CeaserDecrypt testString=new CeaserDecrypt("Hello girl!",1);
         assertEquals(1,testString.getShiftKey());
+    }
+
+    @Test
+    public void newCeaserDecrypt_setsPlainTextCorrectly_String() {
+        CeaserDecrypt testString=new CeaserDecrypt("Hello girl!",1);
+        testString.setCipherText("Never Ever");
+        assertEquals("Never Ever",testString.getCipherText());
+    }
+
+    @Test
+    public void newCeaserDecrypt_setsShiftKeyCorrectly_Int(){
+        CeaserDecrypt testString=new CeaserDecrypt("Hello girl!",1);
+        testString.setShiftKey(2);
+        assertEquals(2, testString.getShiftKey());
     }
 
     @Test

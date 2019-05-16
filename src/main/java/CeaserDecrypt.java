@@ -17,6 +17,14 @@ public class CeaserDecrypt {
         return shiftKey;
     }
 
+    public void setCipherText(String cipherText) {
+        this.cipherText = cipherText;
+    }
+
+    public void setShiftKey(int shiftKey) {
+        this.shiftKey = shiftKey;
+    }
+
     public String textDecrypt(String text, int shiftNumber) {
 
         String plainText="";
