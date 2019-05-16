@@ -20,7 +20,7 @@ public class App {
             CeaserEncrypt ceaserEncrypt=new CeaserEncrypt(plainText,shiftKey);
             String cipherText=ceaserEncrypt.textEncrypt(ceaserEncrypt.getPlainText(),ceaserEncrypt.getShiftKey());
 
-            CeaserDecrypt ceaserDecrypt=new CeaserDecrypt();
+            CeaserDecrypt ceaserDecrypt=new CeaserDecrypt(cipherText,shiftKey);
             String plainTextAgain=ceaserDecrypt.textDecrypt(cipherText,ceaserEncrypt.getShiftKey());
 
 
