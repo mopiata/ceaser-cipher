@@ -21,12 +21,12 @@ public class App {
             String cipherText=ceaserEncrypt.textEncrypt(ceaserEncrypt.getPlainText(),ceaserEncrypt.getShiftKey());
 
             CeaserDecrypt ceaserDecrypt=new CeaserDecrypt();
-            String plainTextAgain=ceaserDecrypt.textDecrypt(cipherText,shiftKey);
+            String plainTextAgain=ceaserDecrypt.textDecrypt(cipherText,ceaserEncrypt.getShiftKey());
 
 
             System.out.println("Input String: "+ ceaserEncrypt.getPlainText());
             System.out.println("Encrypted String: "+cipherText);
-//            System.out.println("Decrypted String: "+ plainTextAgain);
+            System.out.println("Decrypted String: "+ plainTextAgain);
 
         }catch (IOException e){
             e.printStackTrace();

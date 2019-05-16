@@ -9,6 +9,8 @@ public class CeaserEncrypt {
         this.shiftKey=number;
     }
 
+    
+
     public String getPlainText() {
         return plainText;
     }
