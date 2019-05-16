@@ -20,17 +20,18 @@ public class App {
             CeaserEncrypt ceaserEncrypt=new CeaserEncrypt(plainText,shiftKey);
             String cipherText=ceaserEncrypt.textEncrypt(ceaserEncrypt.getPlainText(),ceaserEncrypt.getShiftKey());
 
-            CeaserDecrypt ceaserDecrypt=new CeaserDecrypt(cipherText,shiftKey);
-            String plainTextAgain=ceaserDecrypt.textDecrypt(cipherText,ceaserEncrypt.getShiftKey());
+            CeaserDecrypt ceaserDecrypt=new CeaserDecrypt("",0);
+            ceaserDecrypt.setCipherText(cipherText);
+            ceaserDecrypt.setShiftKey(shiftKey);
+            String plainTextAgain=ceaserDecrypt.textDecrypt(ceaserDecrypt.getCipherText(),ceaserDecrypt.getShiftKey());
 
 
             System.out.println("Input String: "+ ceaserEncrypt.getPlainText());
-            System.out.println("Encrypted String: "+cipherText);
+            System.out.println("Encrypted String: "+ cipherText);
             System.out.println("Decrypted String: "+ plainTextAgain);
 
         }catch (IOException e){
             e.printStackTrace();
         }
-
     }
 }
