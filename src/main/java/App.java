@@ -30,6 +30,11 @@ public class App {
                     System.out.println("Enter a key number between 1 and 25 to apply on the text.");
                     int shiftKey = Integer.parseInt(bufferedReader.readLine());
 
+                        if(shiftKey<0 || shiftKey>25 ){
+                            System.out.println("Your shiftkey must be a number between 1-25");
+                            break;
+                        }
+
                     CeaserEncrypt ceaserEncrypt = new CeaserEncrypt(plainText, shiftKey);
                     String cipherText = ceaserEncrypt.textEncrypt(ceaserEncrypt.getPlainText(), ceaserEncrypt.getShiftKey());
 
@@ -49,7 +54,7 @@ public class App {
                     break;
                 }
             } catch (IOException e) {
-                e.printStackTrace();
+                System.out.println("You must enter a number between 1 and 25");
             }
         }
     }
