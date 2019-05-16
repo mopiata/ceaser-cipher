@@ -14,17 +14,17 @@ public class App {
         while (programRunning) {
 
             try {
-
+                System.out.println("");
                 System.out.println("What would you like to do?\n " +
-                        "Enter 1 or 2 from the options: " +
-                        "1 Decrypt a text\n"+
+                        "Enter 1 or 2 from the options: \n" +
+                        "1 Encrypt a text\n"+
                         "2 Exit"
                 );
 
                 String navigationChoice = bufferedReader.readLine();
 
                 if(navigationChoice.equals("1")){
-                    System.out.println("Enter a sentence to encrypt");
+                    System.out.println("Enter a text to encrypt");
                     String plainText = bufferedReader.readLine();
 
                     System.out.println("Enter a key number between 1 and 25 to apply on the text.");
@@ -54,7 +54,7 @@ public class App {
                     break;
                 }
             } catch (IOException e) {
-                System.out.println("You must enter a number between 1 and 25");
+                System.out.println(e.getCause());
             }
         }
     }
