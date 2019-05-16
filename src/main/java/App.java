@@ -8,7 +8,7 @@ public class App {
         BufferedReader bufferedReader=new BufferedReader(new InputStreamReader(System.in));
 
         System.out.println("Welcome to the Ceaser-Cipher Application");
-        System.out.println("Enter a sentence to encrypt");
+
 
         try{
             System.out.println("Enter a sentence to encrypt");
@@ -17,16 +17,16 @@ public class App {
             System.out.println("Enter a key number between 1 and 25 to apply on the text.");
             int shiftKey=Integer.parseInt(bufferedReader.readLine());
 
-            CeaserEncrypt ceaserEncrypt=new CeaserEncrypt();
-            String cipherText=ceaserEncrypt.textEncrypt(plainText,shiftKey);
+            CeaserEncrypt ceaserEncrypt=new CeaserEncrypt(plainText,shiftKey);
+            String cipherText=ceaserEncrypt.textEncrypt(ceaserEncrypt.getPlainText(),ceaserEncrypt.getShiftKey());
 
             CeaserDecrypt ceaserDecrypt=new CeaserDecrypt();
             String plainTextAgain=ceaserDecrypt.textDecrypt(cipherText,shiftKey);
 
 
-            System.out.println("YOUR TEXT: "+plainText);
-            System.out.println("YOUR CIPHERTEXT: "+cipherText);
-            System.out.println("YOUR TEXT AGAIN: "+ plainTextAgain);
+            System.out.println("Input String: "+ ceaserEncrypt.getPlainText());
+            System.out.println("Encrypted String: "+cipherText);
+//            System.out.println("Decrypted String: "+ plainTextAgain);
 
         }catch (IOException e){
             e.printStackTrace();

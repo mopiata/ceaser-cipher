@@ -1,7 +1,23 @@
 import java.lang.Character;
 
 public class CeaserEncrypt {
-    public String textEncrypt(String text, int shiftKey) {
+    private String  plainText;
+    private int shiftKey;
+
+    public CeaserEncrypt(String input, int number){
+        this.plainText=input;
+        this.shiftKey=number;
+    }
+
+    public String getPlainText() {
+        return plainText;
+    }
+
+    public int getShiftKey() {
+        return shiftKey;
+    }
+
+    public String textEncrypt(String text, int shiftNumber) {
 
         String cipherText = "";
 
