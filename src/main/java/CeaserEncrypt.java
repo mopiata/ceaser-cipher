@@ -9,7 +9,7 @@ public class CeaserEncrypt {
         this.shiftKey=number;
     }
 
-    
+
 
     public String getPlainText() {
         return plainText;
@@ -27,17 +27,17 @@ public class CeaserEncrypt {
             String stringIndex = String.valueOf(text.charAt(i));
 
             if (stringIndex.matches("[a-zA-Z]+")) {
-                Character ciphered_letter = (char) (text.charAt(i) + shiftKey);
+                Character ciphered_letter = (char) (text.charAt(i) + shiftNumber);
 
                 if (stringIndex.matches("[a-z]+")) {
                     if (ciphered_letter > 'z') {
-                        cipherText += (char) (text.charAt(i) - (26 - shiftKey));
+                        cipherText += (char) (text.charAt(i) - (26 - shiftNumber));
                     } else {
                         cipherText += ciphered_letter;
                     }
                 } else if (stringIndex.matches("[A-Z]+")) {
                     if (ciphered_letter > 'Z') {
-                        cipherText += (char) (text.charAt(i) - (26 - shiftKey));
+                        cipherText += (char) (text.charAt(i) - (26 - shiftNumber));
                     } else {
                         cipherText += ciphered_letter;
                     }
