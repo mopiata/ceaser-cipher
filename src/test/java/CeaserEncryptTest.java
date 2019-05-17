@@ -3,11 +3,13 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class CeaserEncryptTest {
+    //tests if my object(testString) is an instance of CeaserEncrypt
     @Test
     public void newCeaserEncrypt_instantiatesCorrectly() {
         CeaserEncrypt testString=new CeaserEncrypt("1",1);
         assertEquals(true, testString instanceof CeaserEncrypt);
     }
+
 
     @Test
     public void newCeaserEncrypt_getsPlainTextCorrectly_String() {

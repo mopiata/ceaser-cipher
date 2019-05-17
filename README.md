@@ -24,7 +24,14 @@ This java application allows a user to enter a string and a key to apply on the 
 ## Setup/Installation Requirements
 
 * Clone this repository
-* run it on a console or your IDE
+* Open it on your IDE
+* Compile the App.java file found in the src/main/java folder. If you're using the terminal, navigate to this folder and run 'javac App.java'
+* Run the application on the terminal. Run using the command 'java App' and use the application
+
+## Running tests
+* Navigate to any of the files in src/test/java
+* Open the file
+* On the display tab in the IDE, right click the file and run it
 
 ## Technologies Used
 
