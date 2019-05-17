@@ -15,8 +15,8 @@ This java application allows a user to enter a string and a key to apply on the 
 | Numerical strings are not encrypted  | "1",1  | "1"  |
 | Spaces and punctuation marks should not be encrypted  | "?",2  | "?"  |
 | Each character in a sentence should shift forward by the number of the shift key  | "I am happy",2  | "K co jcrra"  |
-| Shift key must be numerical  | "A","f"  | Throws error and ends program  |
-| Shift key must be in range 1-25  | "A",50  | Throws error and ends program  |
+| Shift key must be numerical  | "A","f"  | Throws error and starts program  |
+| Shift key must be in range 1-25  | "A",50  | Asks for input again  |
 | Return nothing when empty string is submitted  | "",2  | ""  |
 | Encrypt lower and uppercase letters appropriately  | "A caT",1  | "B dbU"  |
 | Ensure looping through the alphabet shift  | "Z",1  | "A"  |
