@@ -55,6 +55,8 @@ public class App {
                 }
             } catch (IOException e) {
                 e.printStackTrace();
+            } catch (NumberFormatException e) {
+                System.out.println("You must enter a valid key");
             }
         }
     }
